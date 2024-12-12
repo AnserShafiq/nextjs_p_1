@@ -5,6 +5,7 @@ import React from 'react';
 import { getSortedPostsData } from '../../lib/posts';
 import utilStyles from './styles/utils.module.css';
 
+// This build-time rendering -> This process will read the required data will the website is getting LIVE.
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   let externalData = [];
@@ -30,7 +31,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, externalData }) {
   return (
-    <Layout home={true}>
+    <Layout home>
       <Head>
         <title>Next JS - Project By Anser</title>
         <link rel="icon" href="/favicon.ico" />
